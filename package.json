@@ -1,6 +1,9 @@
 {
-  "name": "my-project-name",
+  "name": "elm-web-audio-test",
   "version": "0.1.0",
+  "license": "MIT",
+  "description": "WebAudio test in elm",
+  "repository": "https://github.com/noise64/elm-web-audio-test",
   "devDependencies": {
     "grunt": "~0.4.5",
     "grunt-contrib-watch": "^0.6.1",
