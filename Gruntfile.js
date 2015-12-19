@@ -2,6 +2,12 @@ module.exports = function (grunt) {
   require('load-grunt-tasks')(grunt);
 
   grunt.initConfig({
+    clean: {
+      "build": ["build"],
+      "elm-stuff": ["elm-stuff"],
+      "node_modules": ["node_modules"]
+    },
+
     shell: {
       'elm-make': {
         command: 'elm make src/main/elm/Main.elm --output build/main.js'
