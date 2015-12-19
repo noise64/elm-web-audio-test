@@ -6,7 +6,7 @@ My webaudio - elm playground
 How to run
 ----------
 
-Need software:
+Software requirements:
 
   * [npm](https://www.npmjs.com/)
   * [grunt](http://gruntjs.com/)
