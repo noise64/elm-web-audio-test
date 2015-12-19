@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 
     shell: {
       'elm-make': {
-        command: 'elm make src/main/elm/Main.elm --output build/main.js'
+        command: 'elm make src/main/elm/Main.elm --yes --output build/main.js'
       }
     },
 
