@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-  require('load-grunt-tasks')(grunt);
+  require("load-grunt-tasks")(grunt);
 
   grunt.initConfig({
     clean: {
@@ -9,26 +9,35 @@ module.exports = function (grunt) {
     },
 
     shell: {
-      'elm-make': {
-        command: 'elm make src/main/elm/Main.elm --yes --output build/main.js'
-      }
+      "elm-make": {
+        command: "elm make src/main/elm/Main.elm --yes --output build/main.js"
+      },
+    },
+
+    copy: {
+      "static-web": {
+        expand: true,
+        cwd: "src/main/static-web",
+        src: "**",
+        dest: "build/"
+      },
     },
 
     watch: {
       "elm": {
         files: [
-          'src/main/elm/**/*.elm',
-          'src/main/elm/**/*.js'
+          "src/main/elm/**/*.elm",
+          "src/main/elm/**/*.js"
         ],
-        tasks: ['elm-make'],
+        tasks: ["elm-make"],
         options: {
           spawn: false,
           livereload: true
         }
       },
-      "js": {
-        files: ['src/main/static-web/**/*'],
-        tasks: [],
+      "static-web": {
+        files: ["src/main/static-web/**/*"],
+        tasks: ["copy:static-web"],
         options: {
           spawn: false,
           livereload: true
@@ -38,7 +47,9 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask("default", function () {
+    grunt.task.run("clean:build");
     grunt.task.run("elm-make");
+    grunt.task.run("copy:static-web");
   });
 
   grunt.registerTask("elm-make", function () {

@@ -6,6 +6,11 @@ My webaudio - elm playground
 How to run
 ----------
 
+Try it [online](http://noise64.github.io/elm-web-audio-test/) or build it locally.
+
+How to build
+------------
+
 Software requirements:
 
   * [elm](http://elm-lang.org/)
@@ -18,5 +23,16 @@ npm install
 
 grunt
 
-open ./src/main/static-web/index.html
+open ./index.html
+```
+
+Development with live reloading
+-------------------------------
+
+After building the project:
+
+```
+grunt watch
+
+open ./index.html
 ```
